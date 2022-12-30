@@ -15,7 +15,7 @@ export default class Pricing {
     if (typeof value !== 'number') {
       throw TypeError('amount should be a number');
     }
-    this.amount = value;
+    this._amount = value;
   }
 
   get currency() {
@@ -26,7 +26,7 @@ export default class Pricing {
     if (value !== Currency) {
       throw TypeError('currency should be a Currency object');
     }
-    this.currency = value;
+    this._currency = value;
   }
 
   displayFullPrice() {
