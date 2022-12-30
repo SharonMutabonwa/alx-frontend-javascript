@@ -23,14 +23,14 @@ export default class Pricing {
   }
 
   set currency(value) {
-    if (value !== Currency) {
-      throw TypeError('currency should be a Currency object');
+    if (value === Currency) {
+      this._currency = value;
     }
-    this._currency = value;
+    throw TypeError('currency should be a Currency object');
   }
 
   displayFullPrice() {
-    return `${this.amount} ${this.currency.name} (${this.currency.code})`;
+    return `${this._amount} ${this._currency.name} (${this._currency.code})`;
   }
 
   static convertPrice(amount, conversionRate) {
