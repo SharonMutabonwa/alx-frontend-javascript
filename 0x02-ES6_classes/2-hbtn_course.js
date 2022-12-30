@@ -1,9 +1,9 @@
 /* eslint no-underscore-dangle: 0 */
 export default class HolbertonCourse {
   constructor(name, length, student) {
-    this.name = name;
-    this.length = length;
-    this.student = student;
+    this._name = name;
+    this._length = length;
+    this._student = student;
   }
 
   get name() {
