@@ -1,3 +1,4 @@
+/* eslint no-underscore-dangle: 0 */
 import Car from './10-car';
 
 export default class EVCar extends Car {
@@ -6,7 +7,8 @@ export default class EVCar extends Car {
     this._range = range;
   }
 
-  static get [Symbol.species]() {
-    return Car;
+  cloneCar() {
+    const NewCar = super.constructor || super[Symbol.species];
+    return new NewCar();
   }
 }
